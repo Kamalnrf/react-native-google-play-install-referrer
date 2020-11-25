@@ -1,17 +1,23 @@
 import { useEffect, useReducer } from 'react';
 import { NativeModules, Platform } from 'react-native';
 
-type ReferrerDetails = {
+export type ReferrerDetails = {
   url: string;
   clickTime: string;
   appInstallTime: string;
   instantExperienceLaunched: boolean;
 };
 
+export type ReferrerError =
+  | 'RUNTIME_EXCEPTION'
+  | 'FEATURE_NOT_SUPPORTED'
+  | 'SERVICE_UNAVAILABLE'
+  | 'DEVELOPER_ERROR';
+
 type State = {
   status: 'idle' | 'pending' | 'resolved' | 'rejected';
   data: undefined | ReferrerDetails;
-  error: undefined | string;
+  error: undefined | ReferrerError;
 };
 
 const initialState: State = {
@@ -26,15 +32,16 @@ export default function useInstallReferrer() {
     initialState
   );
 
-  const setData = (data: ReferrerDetails) =>
-    setState({ data, status: 'resolved' });
-  const setError = (error: string) => setState({ error, status: 'rejected' });
+  const setData = (details: ReferrerDetails) =>
+    setState({ data: details, status: 'resolved' });
+  const setError = (errorMessage: ReferrerError) =>
+    setState({ error: errorMessage, status: 'rejected' });
 
   useEffect(() => {
     if (Platform.OS === 'android')
       NativeModules.PlayInstallReferrerModule.getReferrer()
         .then(setData)
-        .catch((err: Error) => {
+        .catch((err: { message: ReferrerError }) => {
           setError(err.message);
         });
   }, []);
