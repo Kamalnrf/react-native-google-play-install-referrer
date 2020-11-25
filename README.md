@@ -1,4 +1,4 @@
-# react-native-play-install-referrer
+# react-native-google-play-install-referrer
 
 Retrieve referral details on app install from Google Play.
 
@@ -13,13 +13,13 @@ The type of referral information we can get from Google Play by using [Google Pl
 ## Installation
 
 ```sh
-npm install react-native-play-install-referrer
+npm install react-native-google-play-install-referrer
 ```
 
 ## Usage
 
 ```js
-import useInstallReferrer from 'react-native-play-install-referrer';
+import useInstallReferrer from 'react-native-google-play-install-referrer';
 
 export default function App() {
   const { isSuccess, isError, data, error } = useInstallReferrer();

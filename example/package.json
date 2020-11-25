@@ -1,6 +1,6 @@
 {
-  "name": "react-native-play-install-referrer-example",
-  "description": "Example app for react-native-play-install-referrer",
+  "name": "react-native-google-play-install-referrer-example",
+  "description": "Example app for react-native-google-play-install-referrer",
   "version": "0.0.1",
   "private": true,
   "scripts": {

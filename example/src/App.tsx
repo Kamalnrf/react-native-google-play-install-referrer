@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Alert } from 'react-native';
-import useInstallReferrer from 'react-native-play-install-referrer';
+import useInstallReferrer from 'react-native-google-play-install-referrer';
 
 export default function App() {
   const { isSuccess, isError, data, error } = useInstallReferrer();

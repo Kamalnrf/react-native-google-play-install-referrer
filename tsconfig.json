@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "react-native-play-install-referrer": ["./src/index"]
+      "react-native-google-play-install-referrer": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

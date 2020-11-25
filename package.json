@@ -1,5 +1,5 @@
 {
-  "name": "react-native-play-install-referrer",
+  "name": "react-native-google-play-install-referrer",
   "version": "1.0.0",
   "description": "Retrieve referral details on app install from play store",
   "main": "lib/commonjs/index",
@@ -30,13 +30,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/Kamalnrf/react-native-play-install-referrer",
+  "repository": "https://github.com/Kamalnrf/react-native-google-play-install-referrer",
   "author": "Kamal Mukkamala <kamalnrf@gmail.com> (https://github.com/Kamalnrf)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kamalnrf/react-native-play-install-referrer/issues"
+    "url": "https://github.com/Kamalnrf/react-native-google-play-install-referrer/issues"
   },
-  "homepage": "https://github.com/Kamalnrf/react-native-play-install-referrer#readme",
+  "homepage": "https://github.com/Kamalnrf/react-native-google-play-install-referrer#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.16.2",
