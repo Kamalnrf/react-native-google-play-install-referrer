@@ -1,7 +1,7 @@
 {
   "name": "react-native-play-install-referrer",
-  "version": "0.1.0",
-  "description": "Retrive referral details on app install from play store ",
+  "version": "1.0.0",
+  "description": "Retrieve referral details on app install from play store",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
