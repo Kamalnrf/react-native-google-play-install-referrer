@@ -1,25 +1,13 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import PlayInstallReferrer from 'react-native-play-install-referrer';
+import { Alert } from 'react-native';
+import useInstallReferrer from 'react-native-play-install-referrer';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const { isSuccess, isError, data, error } = useInstallReferrer();
 
   React.useEffect(() => {
-    PlayInstallReferrer.multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+    if (isSuccess) Alert.alert('Install Referer Success', `URL: ${data?.url}`);
+    else if (isError) Alert.alert('Install Referrer Error', error);
+  }, [isSuccess, isError, data?.url, error]);
+  return <></>;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
