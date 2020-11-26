@@ -42,13 +42,16 @@ On Success the data will have these values:
 | appInstallTime            | string     | The timestamp in seconds when installation begins.                                                  |
 | instantExperienceLaunched | boolean    | Boolean indicating if the user has interacted with the app's instant experience in the past 7 days. |
 
-On Error it returns a Flag used by google play installer api in `error`:
+On Error it returns a Error Code used by google play installer api in `error`
+
+**Error Code**
 
 | value               | description                                                         |
 | ------------------- | ------------------------------------------------------------------- |
 | RUNTIME_EXCEPTION   | Error caused while constructing InstallReferrerClient               |
-| DEVELOPER_ERROR     | Install Referrer API not supported by the installed Play Store app. |
+| FEATURE_NOT_SUPPORTED | Install Referrer API not supported by the installed Play Store app. |
 | SERVICE_UNAVAILABLE | Could not initiate connection to the Install Referrer service.      |
+| DEVELOPER_ERROR     | General errors caused by incorrect usage |
 
 ## Contributing
 
